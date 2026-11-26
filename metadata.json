@@ -1,0 +1,6 @@
+{
+  "name": "DAYFORM",
+  "description": "Make space for what matters. A calm, Sand & Graphite personal productivity and task management workspace.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

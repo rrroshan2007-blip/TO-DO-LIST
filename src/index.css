@@ -1,0 +1,112 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-sand-canvas: #FAF8F4;
+  --color-sand-secondary: #EDE5D9;
+  --color-sand-beige: #F2EDE5;
+  --color-sand-border: #E5E0D8;
+  --color-sand-muted: #D9DFE2;
+  --color-graphite: #343B46;
+  --color-graphite-secondary: #6C7178;
+  --color-copper: #C18C64;
+  --color-copper-dark: #C69A76;
+  --color-sage: #648B72;
+  --color-ochre: #D5A15E;
+  --color-terracotta: #C96F68;
+}
+
+:root {
+  --bg-main: #FAF8F4;
+  --bg-secondary: #EDE5D9;
+  --bg-beige: #F2EDE5;
+  --bg-card: #FFFFFF;
+  --text-primary: #343B46;
+  --text-secondary: #696E75;
+  --text-subtle: #858A90;
+  --accent: #C18C64;
+  --accent-hover: #AE7B54;
+  --border-color: #E5E0D8;
+  --muted-grey: #D9DFE2;
+  --success: #648B72;
+  --warning: #D5A15E;
+  --danger: #C96F68;
+  color-scheme: light;
+}
+
+.dark {
+  --bg-main: #20252C;
+  --bg-secondary: #343B46;
+  --bg-beige: #2F3640;
+  --bg-card: #2A3038;
+  --text-primary: #F4F0E9;
+  --text-secondary: #A7A9AA;
+  --text-subtle: #8E9399;
+  --accent: #C69A76;
+  --accent-hover: #D2A885;
+  --border-color: #41464E;
+  --muted-grey: #41464E;
+  --success: #79A488;
+  --warning: #DFB06E;
+  --danger: #D8827B;
+  color-scheme: dark;
+}
+
+@layer base {
+  html,
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    overflow-x: hidden;
+  }
+
+  .dark body {
+    letter-spacing: 0.005em;
+  }
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    &:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle Sand & Graphite scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(133, 138, 144, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(133, 138, 144, 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

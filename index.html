@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DAYFORM — Make space for what matters.</title>
+    <meta name="description" content="Make space for what matters. A calm, Sand & Graphite personal productivity and task management workspace." />
+    <meta property="og:title" content="DAYFORM — Make space for what matters." />
+    <meta property="og:description" content="Make space for what matters. A calm, Sand & Graphite personal productivity and task management workspace." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('dayform_active_theme');
+          var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (saved === 'dark' || (saved === 'system' && prefersDark) || (!saved && false)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-[#FAF8F4] text-[#343B46] dark:bg-[#20252C] dark:text-[#F4F0E9] antialiased selection:bg-[#C18C64]/20 selection:text-[#343B46] dark:selection:bg-[#C69A76]/30 dark:selection:text-[#F4F0E9]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
